@@ -1,5 +1,5 @@
-// This is the web service engine that directs traffic to/from Telemetri.  Each sub-directory
-// underneath this application is a worker set that deals with a specific type of Telemetri type.
+// This utility listens for incoming POSTs in order to initiate an action like a
+// repository pull or a notification.
 package main
 
 import (
@@ -57,7 +57,7 @@ func PingTheApi() (int, string) {
 	return http.StatusOK, "PONG"
 } // func
 
-// RunPullScrip will validate the request, then execute the command to pull
+// RunPullScript will validate the request, then execute the command to pull
 // the new Docker build from the repository.
 func RunPullScript(params martini.Params) (int, string) {
 
